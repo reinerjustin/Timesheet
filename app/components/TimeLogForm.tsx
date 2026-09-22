@@ -59,48 +59,90 @@ export default function TimeLogForm({
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label>Date</label>
+        <label 
+          htmlFor="workDate"
+          className="mb-2 block text-sm font-medium text-gray-700"
+        >
+          Date
+        </label>
+
         <input
+          id="workDate"
           type="date"
           value={workDate}
           onChange={(e) => setWorkDate(e.target.value)}
+          className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
           required
+          disabled={saving}
         />
       </div>
 
-      <div>
-        <label>Time In</label>
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label
+            htmlFor="timeIn"
+            className="mb-2 block text-sm font-medium text-gray-700"
+          >
+            Time In
+          </label>
+
         <input
+          id="timeIn"
           type="time"
           value={timeIn}
           onChange={(e) => setTimeIn(e.target.value)}
+          className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
           required
+          disabled={saving}
         />
+        </div>
+
+        <div>
+          <label
+            htmlFor="timeOut"
+            className="mb-2 block text-sm font-medium text-gray-700"
+          >
+            Time Out
+          </label>
+
+          <input
+            id="timeOut"
+            type="time"
+            value={timeOut}
+            onChange={(e) => setTimeOut(e.target.value)}
+            className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus_ring-blue-200"
+            required
+            disabled={saving}
+          />
+        </div>
       </div>
 
       <div>
-        <label>Time Out</label>
-        <input
-          type="time"
-          value={timeOut}
-          onChange={(e) => setTimeOut(e.target.value)}
-          required
-        />
-      </div>
+        <label
+          htmlFor="remarks"
+          className="mb-2 block text-sm font-medium text-gray-700"
+        >
+          Remarks
+        </label>
 
-      <div>
-        <label>Remarks</label>
-        <input
-          type="text"
+        <textarea
+          id="remarks"
           value={remarks}
           onChange={(e) => setRemarks(e.target.value)}
+          rows={3}
           placeholder="Optional"
+          className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          disabled={saving}
         />
       </div>
 
-      <button type="submit" disabled={saving}>
+      <button 
+        type="submit" 
+        disabled={saving}
+        className="w-full rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+      >
         {saving ? "Saving..." : "Save Time Log"}
       </button>
     </form>
