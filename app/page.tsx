@@ -16,6 +16,7 @@ type TimeLog = {
 export default function Home() {
   const [logs, setLogs] = useState<TimeLog[]>([]);
   const [loading, setLoading] = useState(true);
+  const [editingLog, setEditingLog] = useState<TimeLog | null>(null);
 
   async function loadLogs() {
     try {
@@ -57,14 +58,22 @@ export default function Home() {
       <section>
         <h2>Add Time Log</h2>
 
-        <TimeLogForm onSaved={loadLogs} />
+        <TimeLogForm 
+          onSaved={loadLogs}
+          editingLog={editingLog}
+          onCancelEdit={() => setEditingLog(null)}
+        />
       </section>
 
       <section>
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <TimeLogTable logs={logs} />
+          <TimeLogTable 
+            logs={logs} 
+            onEdit={setEditingLog}
+            onDeleted={loadLogs}
+          />
         )}
       </section>
     </main>

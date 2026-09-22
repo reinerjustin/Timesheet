@@ -12,13 +12,25 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var _s = __turbopack_context__.k.signature();
 "use client";
 ;
-function TimeLogForm({ onSaved }) {
+function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
     _s();
     const [workDate, setWorkDate] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [timeIn, setTimeIn] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [timeOut, setTimeOut] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [remarks, setRemarks] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [saving, setSaving] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "TimeLogForm.useEffect": ()=>{
+            if (editingLog) {
+                setWorkDate(editingLog.workDate.slice(0, 10));
+                setTimeIn(editingLog.timeIn);
+                setTimeOut(editingLog.timeOut);
+                setRemarks(editingLog.remarks ?? "");
+            }
+        }
+    }["TimeLogForm.useEffect"], [
+        editingLog
+    ]);
     async function handleSubmit(e) {
         e.preventDefault();
         if (!workDate || !timeIn || !timeOut) {
@@ -27,8 +39,8 @@ function TimeLogForm({ onSaved }) {
         }
         setSaving(true);
         try {
-            const response = await fetch("/api/timelogs", {
-                method: "POST",
+            const response = await fetch(editingLog ? `/api/timelogs/${editingLog.id}` : "/api/timelogs", {
+                method: editingLog ? "PUT" : "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -48,6 +60,7 @@ function TimeLogForm({ onSaved }) {
             setTimeIn("");
             setTimeOut("");
             setRemarks("");
+            onCancelEdit();
             onSaved();
         } catch (error) {
             console.error(error);
@@ -68,7 +81,7 @@ function TimeLogForm({ onSaved }) {
                         children: "Date"
                     }, void 0, false, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
-                        lineNumber: 64,
+                        lineNumber: 92,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -81,13 +94,13 @@ function TimeLogForm({ onSaved }) {
                         disabled: saving
                     }, void 0, false, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
-                        lineNumber: 71,
+                        lineNumber: 99,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/TimeLogForm.tsx",
-                lineNumber: 63,
+                lineNumber: 91,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -101,7 +114,7 @@ function TimeLogForm({ onSaved }) {
                                 children: "Time In"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/TimeLogForm.tsx",
-                                lineNumber: 84,
+                                lineNumber: 112,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -114,13 +127,13 @@ function TimeLogForm({ onSaved }) {
                                 disabled: saving
                             }, void 0, false, {
                                 fileName: "[project]/app/components/TimeLogForm.tsx",
-                                lineNumber: 91,
+                                lineNumber: 119,
                                 columnNumber: 9
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
-                        lineNumber: 83,
+                        lineNumber: 111,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -131,7 +144,7 @@ function TimeLogForm({ onSaved }) {
                                 children: "Time Out"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/TimeLogForm.tsx",
-                                lineNumber: 103,
+                                lineNumber: 131,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -144,19 +157,19 @@ function TimeLogForm({ onSaved }) {
                                 disabled: saving
                             }, void 0, false, {
                                 fileName: "[project]/app/components/TimeLogForm.tsx",
-                                lineNumber: 110,
+                                lineNumber: 138,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
-                        lineNumber: 102,
+                        lineNumber: 130,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/TimeLogForm.tsx",
-                lineNumber: 82,
+                lineNumber: 110,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -167,7 +180,7 @@ function TimeLogForm({ onSaved }) {
                         children: "Remarks"
                     }, void 0, false, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
-                        lineNumber: 123,
+                        lineNumber: 151,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -180,33 +193,42 @@ function TimeLogForm({ onSaved }) {
                         disabled: saving
                     }, void 0, false, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
-                        lineNumber: 130,
+                        lineNumber: 158,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/TimeLogForm.tsx",
-                lineNumber: 122,
+                lineNumber: 150,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 type: "submit",
                 disabled: saving,
                 className: "w-full rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50",
-                children: saving ? "Saving..." : "Save Time Log"
+                children: saving ? "Saving..." : editingLog ? "Update Time Log" : "Save Time Log"
             }, void 0, false, {
                 fileName: "[project]/app/components/TimeLogForm.tsx",
-                lineNumber: 141,
+                lineNumber: 169,
                 columnNumber: 7
+            }, this),
+            editingLog && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                type: "button",
+                onClick: onCancelEdit,
+                children: "Cancel"
+            }, void 0, false, {
+                fileName: "[project]/app/components/TimeLogForm.tsx",
+                lineNumber: 182,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/TimeLogForm.tsx",
-        lineNumber: 62,
+        lineNumber: 90,
         columnNumber: 5
     }, this);
 }
-_s(TimeLogForm, "ssxXym/k1nRt4BHbcgBvoJ0aj7Y=");
+_s(TimeLogForm, "pTKKUP0KmbFzhXn+aNvsHiMMHkg=");
 _c = TimeLogForm;
 var _c;
 __turbopack_context__.k.register(_c, "TimeLogForm");
@@ -223,7 +245,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 ;
-function TimeLogTable({ logs }) {
+function TimeLogTable({ logs, onEdit, onDeleted }) {
     function formatDate(date) {
         return new Date(date).toLocaleDateString();
     }
@@ -231,6 +253,18 @@ function TimeLogTable({ logs }) {
         const hours = Math.floor(minutes / 60);
         const mins = minutes % 60;
         return `${hours}h ${mins}m`;
+    }
+    async function handleDelete(id) {
+        const confirmed = confirm("Delete this time log?");
+        if (!confirmed) return;
+        const response = await fetch(`/api/timelogs/${id}`, {
+            method: "DELETE"
+        });
+        if (!response.ok) {
+            alert("Failed to delete.");
+            return;
+        }
+        onDeleted();
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "rounded-xl bg-white shadow-md",
@@ -242,12 +276,12 @@ function TimeLogTable({ logs }) {
                     children: "Time Logs"
                 }, void 0, false, {
                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                    lineNumber: 29,
+                    lineNumber: 55,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                lineNumber: 28,
+                lineNumber: 54,
                 columnNumber: 9
             }, this),
             logs.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -255,7 +289,7 @@ function TimeLogTable({ logs }) {
                 children: "No time logs yet."
             }, void 0, false, {
                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                lineNumber: 36,
+                lineNumber: 62,
                 columnNumber: 11
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "overflow-x-auto",
@@ -271,7 +305,7 @@ function TimeLogTable({ logs }) {
                                         children: "Date"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 44,
+                                        lineNumber: 70,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -279,7 +313,7 @@ function TimeLogTable({ logs }) {
                                         children: "Time In"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 73,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -287,7 +321,7 @@ function TimeLogTable({ logs }) {
                                         children: "Time Out"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 76,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -295,7 +329,7 @@ function TimeLogTable({ logs }) {
                                         children: "Total"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 79,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -303,7 +337,7 @@ function TimeLogTable({ logs }) {
                                         children: "Remarks"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 82,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -311,18 +345,18 @@ function TimeLogTable({ logs }) {
                                         children: "Actions"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 85,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                                lineNumber: 43,
+                                lineNumber: 69,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                            lineNumber: 42,
+                            lineNumber: 68,
                             columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -335,7 +369,7 @@ function TimeLogTable({ logs }) {
                                             children: formatDate(log.workDate)
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 71,
+                                            lineNumber: 97,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -343,7 +377,7 @@ function TimeLogTable({ logs }) {
                                             children: log.timeIn
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 75,
+                                            lineNumber: 101,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -351,7 +385,7 @@ function TimeLogTable({ logs }) {
                                             children: log.timeOut
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 79,
+                                            lineNumber: 105,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -361,12 +395,12 @@ function TimeLogTable({ logs }) {
                                                 children: formatHours(log.totalMinutes)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 110,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 109,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -374,60 +408,62 @@ function TimeLogTable({ logs }) {
                                             children: log.remarks || "-"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 89,
+                                            lineNumber: 115,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "space-x-2 px-6 py-4 text-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>onEdit(log),
                                                     className: "rounded-md bg-yellow-500 px-3 py-1 text-sm font-medium text-white transition hover:bg-yellow-600",
                                                     children: "Edit"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 120,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>handleDelete(log.id),
                                                     className: "rounded-md bg-red-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-red-700",
                                                     children: "Delete"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                                                    lineNumber: 99,
+                                                    lineNumber: 126,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 119,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, log.id, true, {
                                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                                    lineNumber: 67,
+                                    lineNumber: 93,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                            lineNumber: 65,
+                            lineNumber: 91,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                    lineNumber: 41,
+                    lineNumber: 67,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                lineNumber: 40,
+                lineNumber: 66,
                 columnNumber: 11
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/TimeLogTable.tsx",
-        lineNumber: 27,
+        lineNumber: 53,
         columnNumber: 7
     }, this);
 }
@@ -459,6 +495,7 @@ function Home() {
     _s();
     const [logs, setLogs] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [editingLog, setEditingLog] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     async function loadLogs() {
         try {
             const response = await fetch("/api/timelogs");
@@ -484,7 +521,7 @@ function Home() {
                 children: "Time Logger"
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 47,
+                lineNumber: 48,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -493,7 +530,7 @@ function Home() {
                         children: "Total Hours"
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 50,
+                        lineNumber: 51,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -505,13 +542,13 @@ function Home() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -520,20 +557,22 @@ function Home() {
                         children: "Add Time Log"
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 58,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$TimeLogForm$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        onSaved: loadLogs
+                        onSaved: loadLogs,
+                        editingLog: editingLog,
+                        onCancelEdit: ()=>setEditingLog(null)
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 60,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 57,
+                lineNumber: 58,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -541,28 +580,30 @@ function Home() {
                     children: "Loading..."
                 }, void 0, false, {
                     fileName: "[project]/app/page.tsx",
-                    lineNumber: 65,
+                    lineNumber: 70,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$TimeLogTable$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    logs: logs
+                    logs: logs,
+                    onEdit: setEditingLog,
+                    onDeleted: loadLogs
                 }, void 0, false, {
                     fileName: "[project]/app/page.tsx",
-                    lineNumber: 67,
+                    lineNumber: 72,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 63,
+                lineNumber: 68,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 46,
+        lineNumber: 47,
         columnNumber: 5
     }, this);
 }
-_s(Home, "lYx/TOoNu7KeE6EXJa8Z4htpyYA=");
+_s(Home, "OO8U5Yy4iLccc+onDpumvnT4+Zc=");
 _c = Home;
 var _c;
 __turbopack_context__.k.register(_c, "Home");

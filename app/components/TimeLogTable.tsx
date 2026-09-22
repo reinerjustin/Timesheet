@@ -9,8 +9,12 @@ type TimeLog = {
   
   export default function TimeLogTable({
     logs,
+    onEdit,
+    onDeleted,
   }: {
     logs: TimeLog[];
+    onEdit: (log: TimeLog) => void;
+    onDeleted: () => void;
   }) {
     function formatDate(date: string) {
       return new Date(date).toLocaleDateString();
@@ -21,6 +25,28 @@ type TimeLog = {
       const mins = minutes % 60;
   
       return `${hours}h ${mins}m`;
+    }
+
+    async function handleDelete(id: number) {
+      const confirmed = confirm(
+        "Delete this time log?"
+      );
+
+      if (!confirmed) return;
+
+      const response = await fetch(
+        `/api/timelogs/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!response.ok) {
+        alert("Failed to delete.");
+        return;
+      }
+
+      onDeleted();
     }
   
     return (
@@ -92,11 +118,13 @@ type TimeLog = {
 
                   <td className="space-x-2 px-6 py-4 text-center">
                     <button
+                      onClick={() => onEdit(log)}
                       className="rounded-md bg-yellow-500 px-3 py-1 text-sm font-medium text-white transition hover:bg-yellow-600">
                         Edit
                     </button>
 
                     <button
+                      onClick={() => handleDelete(log.id)}
                       className="rounded-md bg-red-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-red-700">
                         Delete
                     </button>

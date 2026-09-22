@@ -1,17 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+type TimeLog = {
+  id: number;
+  workDate: string;
+  timeIn: string;
+  timeOut: string;
+  totalMinutes: number;
+  remarks: string | null;
+};
 
 export default function TimeLogForm({
   onSaved,
+  editingLog,
+  onCancelEdit,
 }: {
   onSaved: () => void;
+  editingLog: TimeLog | null;
+  onCancelEdit: () => void;
 }) {
   const [workDate, setWorkDate] = useState("");
   const [timeIn, setTimeIn] = useState("");
   const [timeOut, setTimeOut] = useState("");
   const [remarks, setRemarks] = useState("");
   const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    if (editingLog) {
+      setWorkDate(editingLog.workDate.slice(0, 10));
+      setTimeIn(editingLog.timeIn);
+      setTimeOut(editingLog.timeOut);
+      setRemarks(editingLog.remarks ?? "");
+    }
+  }, [editingLog]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -24,18 +46,23 @@ export default function TimeLogForm({
     setSaving(true);
 
     try {
-      const response = await fetch("/api/timelogs", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          workDate,
-          timeIn,
-          timeOut,
-          remarks,
-        }),
-      });
+      const response = await fetch(
+        editingLog
+          ? `/api/timelogs/${editingLog.id}`
+          : "/api/timelogs",
+        {
+          method: editingLog ? "PUT" : "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            workDate,
+            timeIn,
+            timeOut,
+            remarks,
+          }),
+        }
+      );
 
       const data = await response.json();
 
@@ -48,8 +75,9 @@ export default function TimeLogForm({
       setTimeIn("");
       setTimeOut("");
       setRemarks("");
-
+      onCancelEdit();
       onSaved();
+
     } catch (error) {
       console.error(error);
       alert("Something went wrong.");
@@ -143,8 +171,22 @@ export default function TimeLogForm({
         disabled={saving}
         className="w-full rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {saving ? "Saving..." : "Save Time Log"}
+        {saving 
+          ? "Saving..."
+          : editingLog
+          ? "Update Time Log" 
+          : "Save Time Log"}
       </button>
+
+      {editingLog && (
+        <button
+          type="button"
+          onClick={onCancelEdit}
+        >
+            Cancel
+        </button>
+      )}
+      
     </form>
   );
 }
