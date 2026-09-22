@@ -24,35 +24,88 @@ type TimeLog = {
     }
   
     return (
-      <div>
-        <h2>Time Logs</h2>
+      <div className="rounded-xl bg-white shadow-md">
+        <div className="border-b border-gray-200 px-6 py-4">
+          <h2 className="text-xl font-semibold text-gray-800">
+            Time Logs
+          </h2>
+        </div>
+        
   
         {logs.length === 0 ? (
-          <p>No time logs yet.</p>
+          <div className="p-6 text-center text-gray-500">
+            No time logs yet.
+          </div>
         ) : (
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Time In</th>
-                <th>Time Out</th>
-                <th>Total</th>
-                <th>Remarks</th>
-              </tr>
-            </thead>
+          <div className="overflow-x-auto">
+            <table className="min-w-full">
+              <thead className="bg-blue-600 text-white">
+                <tr>
+                  <th className="px-6 py-3 text-left text-sm font-semibold">
+                    Date
+                  </th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold">
+                    Time In
+                  </th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold">
+                    Time Out
+                  </th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold">
+                    Total
+                  </th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold">
+                    Remarks
+                  </th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
   
-            <tbody>
+            <tbody className="divide-y divide-gray-200">
               {logs.map((log) => (
-                <tr key={log.id}>
-                  <td>{formatDate(log.workDate)}</td>
-                  <td>{log.timeIn}</td>
-                  <td>{log.timeOut}</td>
-                  <td>{formatHours(log.totalMinutes)}</td>
-                  <td>{log.remarks || "-"}</td>
+                <tr 
+                  key={log.id}
+                  className="hover:bg-gray-50 transition-colors"
+                >
+                  <td className="px-6 py-4">
+                    {formatDate(log.workDate)}
+                  </td>
+
+                  <td className="px-6 py-4">
+                    {log.timeIn}
+                  </td>
+
+                  <td className="px-6 py-4">
+                    {log.timeOut}
+                  </td>
+
+                  <td className="px-6 py-4">
+                    <span className="rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-700">
+                      {formatHours(log.totalMinutes)}
+                    </span>
+                  </td>
+
+                  <td className="px-6 py-4 text-gray-600">
+                    {log.remarks || "-"}
+                  </td>
+
+                  <td className="space-x-2 px-6 py-4 text-center">
+                    <button
+                      className="rounded-md bg-yellow-500 px-3 py-1 text-sm font-medium text-white transition hover:bg-yellow-600">
+                        Edit
+                    </button>
+
+                    <button
+                      className="rounded-md bg-red-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-red-700">
+                        Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
         )}
       </div>
     );
