@@ -44,38 +44,54 @@ export default function Home() {
   const remainingMinutes = totalMinutes % 60;
 
   return (
-    <main>
-      <h1>Time Logger</h1>
+    <main className="min-h-screen bg-gray-100 py-10">
+      <div className="mx-auto max-w-6xl px-6">
+        <header className="mb-8">
+          <h1 className="text-4xl font-bold text-gray-800">
+            Time Logger
+          </h1>
 
-      <section>
-        <h2>Total Hours</h2>
+          <p className="mt-2 text-gray-500">
+            Track your daily working hours.
+          </p>
+        </header>
+  
+        <section className="mb-8 rounded-xl bg-blue-600 p-6 text-white shadow-lg">
+          <h2 className="text-lg font-medium">
+            Total Hours Worked
+          </h2>
 
-        <p>
-          {totalHours}h {remainingMinutes}m
-        </p>
-      </section>
+          <p className="mt-3 text-5xl font-bold">
+            {totalHours}h {remainingMinutes}m
+          </p>
+        </section>
 
-      <section>
-        <h2>Add Time Log</h2>
+        <section className="mb-8 rounded-xl bg-white p-6 shadow-md">
+          <h2 className="mb-4 text-2xl font-semibold text-gray-800">
+            Add Time Log
+          </h2>
 
-        <TimeLogForm 
-          onSaved={loadLogs}
-          editingLog={editingLog}
-          onCancelEdit={() => setEditingLog(null)}
-        />
-      </section>
-
-      <section>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <TimeLogTable 
-            logs={logs} 
-            onEdit={setEditingLog}
-            onDeleted={loadLogs}
+          <TimeLogForm 
+            onSaved={loadLogs}
+            editingLog={editingLog}
+            onCancelEdit={() => setEditingLog(null)}
           />
-        )}
-      </section>
+        </section>
+
+        <section className="rounded-xl bg-white p-6 shadow-md">
+          {loading ? (
+            <div className="py-10 text-center text-gray-500">
+              Loading time logs...
+            </div>
+          ) : (
+            <TimeLogTable 
+              logs={logs} 
+              onEdit={setEditingLog}
+              onDeleted={loadLogs}
+            />
+          )}
+        </section>
+      </div>
     </main>
   );
 }
