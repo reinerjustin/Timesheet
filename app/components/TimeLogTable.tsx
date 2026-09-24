@@ -29,43 +29,56 @@ type TimeLog = {
 
     async function handleDelete(id: number) {
       const confirmed = confirm(
-        "Delete this time log?"
+        "Are you sure you want to delete this time log?"
       );
 
       if (!confirmed) return;
 
-      const response = await fetch(
-        `/api/timelogs/${id}`,
-        {
-          method: "DELETE",
+      try {
+        const response = await fetch(
+          `/api/timelogs/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
+
+        if (!response.ok) {
+          alert("Failed to delete time log.");
+          return;
         }
-      );
 
-      if (!response.ok) {
-        alert("Failed to delete.");
-        return;
+        onDeleted();
+      } catch (error) {
+        alert("Something went wrong while deleting.");
       }
-
-      onDeleted();
     }
   
     return (
-      <div className="rounded-xl bg-white shadow-md">
-        <div className="border-b border-gray-200 px-6 py-4">
-          <h2 className="text-xl font-semibold text-gray-800">
+      <div className="overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900 shadow-xl">
+        <div className="border-b border-zinc-700 px-6 py-5">
+          <h2 className="text-2xl font-semibold text-orange-400">
             Time Logs
           </h2>
+
+          <p className="mt-1 text-sm text-gray-400">
+            Your recorded working hours
+          </p>
         </div>
-        
-  
+      
         {logs.length === 0 ? (
-          <div className="p-6 text-center text-gray-500">
-            No time logs yet.
+          <div className="p-6 py-12 text-center">
+            <p className="text-gray-400">
+              No time logs yet.
+            </p>
+
+            <p className="mt-1 text-sm text-gray-500">
+              Add your first time log above.
+            </p>
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="min-w-full">
-              <thead className="bg-blue-600 text-white">
+              <thead className="bg-orange-500 text-black">
                 <tr>
                   <th className="px-6 py-3 text-left text-sm font-semibold">
                     Date
@@ -88,11 +101,11 @@ type TimeLog = {
                 </tr>
               </thead>
   
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-zinc-700">
               {logs.map((log) => (
                 <tr 
                   key={log.id}
-                  className="hover:bg-gray-50 transition-colors"
+                  className="bg-zinc-900 text-white transition hover:bg-zinc-800"
                 >
                   <td className="px-6 py-4">
                     {formatDate(log.workDate)}
@@ -107,25 +120,25 @@ type TimeLog = {
                   </td>
 
                   <td className="px-6 py-4">
-                    <span className="rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-700">
+                    <span className="rounded-full border border-orange-500 bg-orange-500/10 px-3 py-1 text-sm font-semibold text-orange-400">
                       {formatHours(log.totalMinutes)}
                     </span>
                   </td>
 
-                  <td className="px-6 py-4 text-gray-600">
+                  <td className="px-6 py-4 text-zinc-300">
                     {log.remarks || "-"}
                   </td>
 
                   <td className="space-x-2 px-6 py-4 text-center">
                     <button
                       onClick={() => onEdit(log)}
-                      className="rounded-md bg-yellow-500 px-3 py-1 text-sm font-medium text-white transition hover:bg-yellow-600">
+                      className="rounded-md bg-orange-500 px-3 py-1 text-sm font-medium text-black transition hover:bg-orange-400">
                         Edit
                     </button>
 
                     <button
                       onClick={() => handleDelete(log.id)}
-                      className="rounded-md bg-red-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-red-700">
+                      className="rounded-md border border-red-500 bg-red-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-red-500">
                         Delete
                     </button>
                   </td>

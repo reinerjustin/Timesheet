@@ -91,7 +91,7 @@ export default function TimeLogForm({
       <div>
         <label 
           htmlFor="workDate"
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm font-medium text-white"
         >
           Date
         </label>
@@ -101,7 +101,7 @@ export default function TimeLogForm({
           type="date"
           value={workDate}
           onChange={(e) => setWorkDate(e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none"
           required
           disabled={saving}
         />
@@ -111,7 +111,7 @@ export default function TimeLogForm({
         <div>
           <label
             htmlFor="timeIn"
-            className="mb-2 block text-sm font-medium text-gray-700"
+            className="mb-2 block text-sm font-medium text-white"
           >
             Time In
           </label>
@@ -121,7 +121,7 @@ export default function TimeLogForm({
           type="time"
           value={timeIn}
           onChange={(e) => setTimeIn(e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none"
           required
           disabled={saving}
         />
@@ -130,7 +130,7 @@ export default function TimeLogForm({
         <div>
           <label
             htmlFor="timeOut"
-            className="mb-2 block text-sm font-medium text-gray-700"
+            className="mb-2 block text-sm font-medium text-white"
           >
             Time Out
           </label>
@@ -140,7 +140,7 @@ export default function TimeLogForm({
             type="time"
             value={timeOut}
             onChange={(e) => setTimeOut(e.target.value)}
-            className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus_ring-blue-200"
+            className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none"
             required
             disabled={saving}
           />
@@ -150,7 +150,7 @@ export default function TimeLogForm({
       <div>
         <label
           htmlFor="remarks"
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm font-medium text-white"
         >
           Remarks
         </label>
@@ -161,7 +161,7 @@ export default function TimeLogForm({
           onChange={(e) => setRemarks(e.target.value)}
           rows={3}
           placeholder="Optional"
-          className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none" 
           disabled={saving}
         />
       </div>
@@ -169,7 +169,7 @@ export default function TimeLogForm({
       <button 
         type="submit" 
         disabled={saving}
-        className="w-full rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-lg bg-orange-500 px-6 py-3 font-semibold text-black transition-all duration-200 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
       >
         {saving 
           ? "Saving..."
@@ -182,11 +182,12 @@ export default function TimeLogForm({
         <button
           type="button"
           onClick={onCancelEdit}
+          className="w-full rounded-lg border border-zinc-700 bg-zinc-800 py-3 font-medium text-white transition hover:bg-zinc-700"
         >
             Cancel
         </button>
       )}
-      
+
     </form>
   );
 }

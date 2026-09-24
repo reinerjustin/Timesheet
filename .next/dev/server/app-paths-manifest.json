@@ -1,5 +1,4 @@
 {
-  "/api/timelogs/[id]/route": "app/api/timelogs/[id]/route.js",
   "/api/timelogs/route": "app/api/timelogs/route.js",
   "/page": "app/page.js"
 }

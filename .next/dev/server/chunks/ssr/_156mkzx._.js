@@ -73,7 +73,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                         htmlFor: "workDate",
-                        className: "mb-2 block text-sm font-medium text-gray-700",
+                        className: "mb-2 block text-sm font-medium text-white",
                         children: "Date"
                     }, void 0, false, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
@@ -85,7 +85,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
                         type: "date",
                         value: workDate,
                         onChange: (e)=>setWorkDate(e.target.value),
-                        className: "w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200",
+                        className: "w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none",
                         required: true,
                         disabled: saving
                     }, void 0, false, {
@@ -106,7 +106,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "timeIn",
-                                className: "mb-2 block text-sm font-medium text-gray-700",
+                                className: "mb-2 block text-sm font-medium text-white",
                                 children: "Time In"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/TimeLogForm.tsx",
@@ -118,7 +118,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
                                 type: "time",
                                 value: timeIn,
                                 onChange: (e)=>setTimeIn(e.target.value),
-                                className: "w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200",
+                                className: "w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none",
                                 required: true,
                                 disabled: saving
                             }, void 0, false, {
@@ -136,7 +136,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "timeOut",
-                                className: "mb-2 block text-sm font-medium text-gray-700",
+                                className: "mb-2 block text-sm font-medium text-white",
                                 children: "Time Out"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/TimeLogForm.tsx",
@@ -148,7 +148,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
                                 type: "time",
                                 value: timeOut,
                                 onChange: (e)=>setTimeOut(e.target.value),
-                                className: "w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus_ring-blue-200",
+                                className: "w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none",
                                 required: true,
                                 disabled: saving
                             }, void 0, false, {
@@ -172,7 +172,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                         htmlFor: "remarks",
-                        className: "mb-2 block text-sm font-medium text-gray-700",
+                        className: "mb-2 block text-sm font-medium text-white",
                         children: "Remarks"
                     }, void 0, false, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
@@ -185,7 +185,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
                         onChange: (e)=>setRemarks(e.target.value),
                         rows: 3,
                         placeholder: "Optional",
-                        className: "w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200",
+                        className: "w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none",
                         disabled: saving
                     }, void 0, false, {
                         fileName: "[project]/app/components/TimeLogForm.tsx",
@@ -201,7 +201,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 type: "submit",
                 disabled: saving,
-                className: "w-full rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50",
+                className: "w-full rounded-lg bg-orange-500 px-6 py-3 font-semibold text-black transition-all duration-200 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50",
                 children: saving ? "Saving..." : editingLog ? "Update Time Log" : "Save Time Log"
             }, void 0, false, {
                 fileName: "[project]/app/components/TimeLogForm.tsx",
@@ -211,6 +211,7 @@ function TimeLogForm({ onSaved, editingLog, onCancelEdit }) {
             editingLog && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 type: "button",
                 onClick: onCancelEdit,
+                className: "w-full rounded-lg border border-zinc-700 bg-zinc-800 py-3 font-medium text-white transition hover:bg-zinc-700",
                 children: "Cancel"
             }, void 0, false, {
                 fileName: "[project]/app/components/TimeLogForm.tsx",
@@ -244,41 +245,72 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
         return `${hours}h ${mins}m`;
     }
     async function handleDelete(id) {
-        const confirmed = confirm("Delete this time log?");
+        const confirmed = confirm("Are you sure you want to delete this time log?");
         if (!confirmed) return;
-        const response = await fetch(`/api/timelogs/${id}`, {
-            method: "DELETE"
-        });
-        if (!response.ok) {
-            alert("Failed to delete.");
-            return;
+        try {
+            const response = await fetch(`/api/timelogs/${id}`, {
+                method: "DELETE"
+            });
+            if (!response.ok) {
+                alert("Failed to delete time log.");
+                return;
+            }
+            onDeleted();
+        } catch (error) {
+            alert("Something went wrong while deleting.");
         }
-        onDeleted();
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "rounded-xl bg-white shadow-md",
+        className: "overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900 shadow-xl",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "border-b border-gray-200 px-6 py-4",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                    className: "text-xl font-semibold text-gray-800",
-                    children: "Time Logs"
-                }, void 0, false, {
-                    fileName: "[project]/app/components/TimeLogTable.tsx",
-                    lineNumber: 55,
-                    columnNumber: 11
-                }, this)
-            }, void 0, false, {
+                className: "border-b border-zinc-700 px-6 py-5",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-2xl font-semibold text-orange-400",
+                        children: "Time Logs"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/TimeLogTable.tsx",
+                        lineNumber: 59,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "mt-1 text-sm text-gray-400",
+                        children: "Your recorded working hours"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/TimeLogTable.tsx",
+                        lineNumber: 63,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                lineNumber: 54,
+                lineNumber: 58,
                 columnNumber: 9
             }, this),
             logs.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "p-6 text-center text-gray-500",
-                children: "No time logs yet."
-            }, void 0, false, {
+                className: "p-6 py-12 text-center",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-gray-400",
+                        children: "No time logs yet."
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/TimeLogTable.tsx",
+                        lineNumber: 70,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "mt-1 text-sm text-gray-500",
+                        children: "Add your first time log above."
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/TimeLogTable.tsx",
+                        lineNumber: 74,
+                        columnNumber: 13
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                lineNumber: 62,
+                lineNumber: 69,
                 columnNumber: 11
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "overflow-x-auto",
@@ -286,7 +318,7 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                     className: "min-w-full",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
-                            className: "bg-blue-600 text-white",
+                            className: "bg-orange-500 text-black",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -294,7 +326,7 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                         children: "Date"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 83,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -302,7 +334,7 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                         children: "Time In"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 86,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -310,7 +342,7 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                         children: "Time Out"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 89,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -318,7 +350,7 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                         children: "Total"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 92,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -326,7 +358,7 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                         children: "Remarks"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 82,
+                                        lineNumber: 95,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -334,31 +366,31 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                         children: "Actions"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TimeLogTable.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 98,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                                lineNumber: 69,
+                                lineNumber: 82,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                            lineNumber: 68,
+                            lineNumber: 81,
                             columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                            className: "divide-y divide-gray-200",
+                            className: "divide-y divide-zinc-700",
                             children: logs.map((log)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                    className: "hover:bg-gray-50 transition-colors",
+                                    className: "bg-zinc-900 text-white transition hover:bg-zinc-800",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "px-6 py-4",
                                             children: formatDate(log.workDate)
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 110,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -366,7 +398,7 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                             children: log.timeIn
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 114,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -374,30 +406,30 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                             children: log.timeOut
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 118,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "px-6 py-4",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-700",
+                                                className: "rounded-full border border-orange-500 bg-orange-500/10 px-3 py-1 text-sm font-semibold text-orange-400",
                                                 children: formatHours(log.totalMinutes)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                                                lineNumber: 110,
+                                                lineNumber: 123,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 122,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-4 text-gray-600",
+                                            className: "px-6 py-4 text-zinc-300",
                                             children: log.remarks || "-"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 115,
+                                            lineNumber: 128,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -405,54 +437,54 @@ function TimeLogTable({ logs, onEdit, onDeleted }) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>onEdit(log),
-                                                    className: "rounded-md bg-yellow-500 px-3 py-1 text-sm font-medium text-white transition hover:bg-yellow-600",
+                                                    className: "rounded-md bg-orange-500 px-3 py-1 text-sm font-medium text-black transition hover:bg-orange-400",
                                                     children: "Edit"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                                                    lineNumber: 120,
+                                                    lineNumber: 133,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>handleDelete(log.id),
-                                                    className: "rounded-md bg-red-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-red-700",
+                                                    className: "rounded-md border border-red-500 bg-red-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-red-500",
                                                     children: "Delete"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 139,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 132,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, log.id, true, {
                                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 106,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/components/TimeLogTable.tsx",
-                            lineNumber: 91,
+                            lineNumber: 104,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/TimeLogTable.tsx",
-                    lineNumber: 67,
+                    lineNumber: 80,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/components/TimeLogTable.tsx",
-                lineNumber: 66,
+                lineNumber: 79,
                 columnNumber: 11
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/TimeLogTable.tsx",
-        lineNumber: 53,
+        lineNumber: 57,
         columnNumber: 7
     }, this);
 }
@@ -495,15 +527,15 @@ function Home() {
     const totalHours = Math.floor(totalMinutes / 60);
     const remainingMinutes = totalMinutes % 60;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: "min-h-screen bg-gray-100 py-10",
+        className: "min-h-screen bg-black py-12 text-white",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "mx-auto max-w-6xl px-6",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-                    className: "mb-8",
+                    className: "mb-8 border-b border-zinc-700 pb-4",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-4xl font-bold text-gray-800",
+                            className: "text-5xl font-extrabold tracking-tight text-orange-400",
                             children: "Time Logger"
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
@@ -511,7 +543,7 @@ function Home() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "mt-2 text-gray-500",
+                            className: "mt-2 text-gray-400",
                             children: "Track your daily working hours."
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
@@ -525,7 +557,7 @@ function Home() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                    className: "mb-8 rounded-xl bg-blue-600 p-6 text-white shadow-lg",
+                    className: "mb-10 rounded-xl bg-orange-500 p-6 text-black shadow-xl",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             className: "text-lg font-medium",
@@ -536,7 +568,7 @@ function Home() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "mt-3 text-5xl font-bold",
+                            className: "mt-3 text-6xl font-extrabold tracking-tight",
                             children: [
                                 totalHours,
                                 "h ",
@@ -555,10 +587,10 @@ function Home() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                    className: "mb-8 rounded-xl bg-white p-6 shadow-md",
+                    className: "mb-10 rounded-xl border border-zinc-700 bg-zinc-900 p-6 shadow-lg",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "mb-4 text-2xl font-semibold text-gray-800",
+                            className: "mb-4 text-2xl font-semibold text-orange-400",
                             children: "Add Time Log"
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
@@ -581,9 +613,9 @@ function Home() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                    className: "rounded-xl bg-white p-6 shadow-md",
+                    className: "rounded-xl border border-zinc-700 bg-zinc-90 p-6 shadow-lg",
                     children: loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "py-10 text-center text-gray-500",
+                        className: "py-12 text-center text-gray-400",
                         children: "Loading time logs..."
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",

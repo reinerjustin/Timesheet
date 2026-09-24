@@ -44,30 +44,30 @@ export default function Home() {
   const remainingMinutes = totalMinutes % 60;
 
   return (
-    <main className="min-h-screen bg-gray-100 py-10">
+    <main className="min-h-screen bg-black py-12 text-white">
       <div className="mx-auto max-w-6xl px-6">
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-800">
+        <header className="mb-8 border-b border-zinc-700 pb-4">
+          <h1 className="text-5xl font-extrabold tracking-tight text-orange-400">
             Time Logger
           </h1>
 
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-gray-400">
             Track your daily working hours.
           </p>
         </header>
   
-        <section className="mb-8 rounded-xl bg-blue-600 p-6 text-white shadow-lg">
+        <section className="mb-10 rounded-xl bg-orange-500 p-6 text-black shadow-xl">
           <h2 className="text-lg font-medium">
             Total Hours Worked
           </h2>
 
-          <p className="mt-3 text-5xl font-bold">
+          <p className="mt-3 text-6xl font-extrabold tracking-tight">
             {totalHours}h {remainingMinutes}m
           </p>
         </section>
 
-        <section className="mb-8 rounded-xl bg-white p-6 shadow-md">
-          <h2 className="mb-4 text-2xl font-semibold text-gray-800">
+        <section className="mb-10 rounded-xl border border-zinc-700 bg-zinc-900 p-6 shadow-lg">
+          <h2 className="mb-4 text-2xl font-semibold text-orange-400">
             Add Time Log
           </h2>
 
@@ -78,9 +78,9 @@ export default function Home() {
           />
         </section>
 
-        <section className="rounded-xl bg-white p-6 shadow-md">
+        <section className="rounded-xl border border-zinc-700 bg-zinc-90 p-6 shadow-lg">
           {loading ? (
-            <div className="py-10 text-center text-gray-500">
+            <div className="py-12 text-center text-gray-400">
               Loading time logs...
             </div>
           ) : (
